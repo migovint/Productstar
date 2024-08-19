@@ -26,7 +26,6 @@ public class InsertionAlgorithm {
         System.out.println("Выбором Прошедшее время: " + sw.elapsedMillis() + "мс");
     }
 
-
 }
 
 

@@ -4,5 +4,4 @@ public class Stopwatch {
     public long elapsedMillis() {
         return ((System.nanoTime() - start) / 1000000);
     }
-
 }

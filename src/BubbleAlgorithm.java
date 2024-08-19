@@ -6,7 +6,6 @@ public class BubbleAlgorithm {
     public BubbleAlgorithm(ArrayList<Integer> bigMass) {
         Stopwatch sw = new Stopwatch();
 
-
         this.bigMass = bigMass;
 
         for (int i = 0; i < bigMass.size(); i++) {

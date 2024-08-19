@@ -17,14 +17,13 @@ public class BubbleAlgorithm {
                     bigMass.set(j, temp);
                 }
             }
-
         }
         System.out.println(bigMass);
-        System.out.println("Пузырьком Прошедшее время: " + sw.elapsedMillis() +"мс");
+        System.out.println("Пузырьком Прошедшее время: " + sw.elapsedMillis() + "мс");
 
     }
 
-    }
+}
 
 
 

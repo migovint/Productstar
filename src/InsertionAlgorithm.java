@@ -15,7 +15,6 @@ public class InsertionAlgorithm {
                 }
             }
 
-
             if (i != minIndex) {
                 int temp = bigMass.get(i);
                 bigMass.set(i, bigMass.get(minIndex));

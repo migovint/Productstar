@@ -9,11 +9,9 @@ public class BigMass {
             mass.add((int) (Math.random() * 10000));
         }
 
-
         new InsertionAlgorithm(mass);
 
         new BubbleAlgorithm(mass);
-
 
     }
 

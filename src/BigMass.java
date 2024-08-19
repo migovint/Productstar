@@ -8,11 +8,11 @@ public class BigMass {
         for (int i = 0; i < 10000; i++) {
             mass.add((int) (Math.random() * 10000));
         }
-        )
 
-        InsertionAlgorithm insertional = new InsertionAlgorithm(mass);
 
-        BubbleAlgorithm bubble = new BubbleAlgorithm(mass);
+        new InsertionAlgorithm(mass);
+
+        new BubbleAlgorithm(mass);
 
 
     }

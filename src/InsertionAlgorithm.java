@@ -21,7 +21,7 @@ public class InsertionAlgorithm {
                 bigMass.set(minIndex, temp);
             }
         }
-        System.out.println(bigMass);
+//        System.out.println(bigMass);
 
         System.out.println("Выбором Прошедшее время: " + sw.elapsedMillis() + "мс");
     }

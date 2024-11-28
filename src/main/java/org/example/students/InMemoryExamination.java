@@ -31,6 +31,7 @@ public class InMemoryExamination implements Examination {
         }
         return (double) sumScore / subject.size();
 
+
     }
 
     @Override

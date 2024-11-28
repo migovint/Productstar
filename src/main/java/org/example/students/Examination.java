@@ -18,4 +18,5 @@ public interface Examination {
     void getAllScores(List<Score> stud); //Получите все баллы
 
     void putAllItems(List<Score> score);
+
 }

@@ -32,6 +32,5 @@ class CashTest {
         double ocenka = cash.getAverageForSubject(list);
         Assertions.assertEquals(4, ocenka);
 
-
     }
 }

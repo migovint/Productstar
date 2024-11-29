@@ -12,6 +12,5 @@ public class CashExamination implements Cash {
             sumScore = sumScore + score.score();
         }
         return (double) sumScore / subject.size();
-
     }
 }

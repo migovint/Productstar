@@ -4,6 +4,5 @@ import java.util.List;
 
 public interface Cash{
 
-
     double getAverageForSubject(List<Score> subject);
 }

@@ -43,7 +43,6 @@ class InMemoryExaminationTest {
         double averageMark = exam.getAverageForSubject(namber);
         Assertions.assertEquals(4, averageMark);
 
-
     }
 
     @Test

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -23,6 +24,9 @@ class InMemoryExaminationTest {
         exam.putScore(score);
         Score actual = exam.getScore(score.name());
         Assertions.assertEquals(score, actual);
+
+
+
     }
 
     @Test
@@ -34,33 +38,21 @@ class InMemoryExaminationTest {
     @Test
     void getAverageForSubject() {
         Score score1 = new Score("Pasha", "history", 5);
-        Score score2 = new Score("Sasha", "history", 3);
-        Score score3 = new Score("Masha", "history", 3);
+        Score score2 = new Score("Sasha", "history", 4);
+        Score score3 = new Score("Masha", "history", 5);
         Score score4 = new Score("Dasha", "history", 4);
         Score score5 = new Score("Rasha", "history", 5);
-        List<Score> namber = List.of(score1, score2, score3, score4, score5);
+        Score score6 = new Score(null,null, 0);
+        Score score7 = new Score("Rasha", "history", 4);
+        Score score8 = new Score("Rasha", "history", 5);
+        List<Score> namber = List.of(score1, score2, score3, score4, score5, score6, score7, score8);
 
         double averageMark = exam.getAverageForSubject(namber);
         Assertions.assertEquals(4, averageMark);
 
-    }
-
-    @Test
-    void multipleSubmissionsStudentNames() {
-        Score score1 = new Score("Pasha", "history", 5);
-        Score score2 = new Score("Pasha", "history", 3);
-        Score score3 = new Score("Masha", "history", 3);
-        Score score4 = new Score("Sasha", "history", 4);
-        Score score5 = new Score("Dasha", "history", 5);
-
-        List<Score> name = List.of(score1, score2, score3, score4, score5);
-
-        exam.multipleSubmissionsStudentNames(name);
-
-        Assertions.assertEquals("Pasha", score1.name());
-
 
     }
+
 
     @Test
     void lastFiveStudentsWithExcellentMarkOnAnySubject() {
@@ -74,10 +66,9 @@ class InMemoryExaminationTest {
         Score score8 = new Score("Boris", "history", 5);
 
         List<Score> stud = List.of(score1, score2, score3, score4, score5, score6, score7, score8);
-        //List<String> fiveStudents1 = new ArrayList<>();
-        Set<String> fiveStudents = exam.lastFiveStudentsWithExcellentMarkOnAnySubject(stud);
+        List<String> five = exam.lastFiveStudentsWithExcellentMarkOnAnySubject(stud);
 
-        Assertions.assertEquals(Set.of("Dasha", "Katy", "Boris", "Lana","Pasha"), fiveStudents);
+        Assertions.assertEquals(List.of("Pasha", "Dasha", "Lana", "Katy","Boris"), five);
     }
 
     @Test
@@ -87,7 +78,7 @@ class InMemoryExaminationTest {
         Score score2 = new Score("Fediy", "history", 3);
         Score score3 = new Score("Masha", "history", 3);
         Score score4 = new Score("Sasha", "history", 4);
-        Score score5 = new Score("Dasha", "history", 5);
+        Score score5 = new Score("Dasha", "Math", 5);
         Score score6 = new Score("Lana", "history", 5);
         Score score7 = new Score("Katy", "history", 5);
         Score score8 = new Score("Boris", "history", 5);

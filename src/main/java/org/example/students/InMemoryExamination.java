@@ -1,5 +1,7 @@
 package org.example.students;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class InMemoryExamination implements Examination {
@@ -9,7 +11,15 @@ public class InMemoryExamination implements Examination {
 
     @Override
     public void putScore(Score score) {
-        items.put(score.name(), score);
+
+      //  items.put(score.name(), score);
+        if (!items.containsKey(score.name())) {
+            items.put(score.name(), score);
+        } else {
+            System.out.println("Такой студент уже есть: " + score.name());
+
+        }
+
     }
 
     @Override
@@ -26,47 +36,51 @@ public class InMemoryExamination implements Examination {
     public double getAverageForSubject(List<Score> subject) {
 
         int sumScore = 0;
-        for (Score score : subject) {
-            sumScore = sumScore + score.score();
+        if (subject.isEmpty()) {
+            System.out.println("Список пустой");
+        } else {
+            for (Score score : subject) {
+                sumScore = sumScore + score.score();
+            }
         }
         return (double) sumScore / subject.size();
 
     }
 
+
     @Override
-    public Set<String> multipleSubmissionsStudentNames(List<Score> name1) {
-        String name = "";
-        Set<Score> once = new HashSet<>();
-        for (Score score : name1) {
-            if (!once.add(score)) {
-                name = score.name();
-            }
+    public List<String> lastFiveStudentsWithExcellentMarkOnAnySubject(List<Score> stud) {
+        List<String> fiveStudents = new LinkedList<>();
+        if (stud.isEmpty()) {
+            System.out.println("Нет отличников");
         }
-        return Collections.singleton(name);
-
-
-    }
-
-    @Override
-    public Set<String> lastFiveStudentsWithExcellentMarkOnAnySubject(List<Score> stud) {
-        Set<String> fiveStudents = new HashSet<>();
         for (Score items : stud) {
-            if (items.score() == 5) {
-                fiveStudents.add(items.name());
+            if (fiveStudents.size() == 5) {
+                break;
+            } else {
+
+                if (items.score() == 5) {
+                    fiveStudents.add(items.name());
+                }
             }
         }
-        return (Set<String>) fiveStudents;
+        if (fiveStudents.size() < 5) {
+            System.out.println("Студентов отличников меньше 5 человек. Их всего - " + fiveStudents.size() + " человек.");
+        }
+        return fiveStudents;
     }
 
     @Override
     public void getAllScores(List<Score> stud) {
-        for (Score score : stud) {
-            System.out.println(score);
-        }
-    }
 
-    @Override
-    public void putAllItems(List<Score> score) {
+
+        Set<String> subjects = new HashSet<>();
+
+        for (Score result : stud) {
+            subjects.add(result.subject());
+        }
+       // return subjects;
+
 
     }
 }

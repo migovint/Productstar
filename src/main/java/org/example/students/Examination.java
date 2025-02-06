@@ -11,11 +11,10 @@ public interface Examination {
 
     double getAverageForSubject(List<Score> subject);//получите Среднее Значение По Предмету
 
-    Set<String> multipleSubmissionsStudentNames(List<Score> name); //несколько отправленных имен учащихся
 
-    Set<String> lastFiveStudentsWithExcellentMarkOnAnySubject(List<Score> stud); //последние Пять Учеников С Отличными Оценками По Любому Предмету
+    List<String> lastFiveStudentsWithExcellentMarkOnAnySubject(List<Score> stud); //последние Пять Учеников С Отличными Оценками По Любому Предмету
 
     void getAllScores(List<Score> stud); //Получите все баллы
 
-    void putAllItems(List<Score> score);
+
 }

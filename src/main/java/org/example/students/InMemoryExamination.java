@@ -9,7 +9,6 @@ public class InMemoryExamination implements Examination {
     private final Map<String, Score> items = new HashMap<>();
 
 
-
     @Override
     public void putScore(Score score) {
 

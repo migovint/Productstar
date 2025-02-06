@@ -18,7 +18,6 @@ class InMemoryExaminationTest {
         exam = new InMemoryExamination();
     }
 
-
     @Test
     void putScore() throws ItemNotFoundException {
         Score score = new Score("Fedia", "История", 4);

@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-
 public interface Examination {
     void putScore(Score score); //добавить счет
 
